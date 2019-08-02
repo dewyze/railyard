@@ -1,0 +1,43 @@
+*.rbc
+.rspec
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/coverage/
+/spec/tmp
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# TODO Comment out this rule if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
+config/master.key
+
+# Only include if you have production secrets in this file, which is no longer a Rails default
+# config/secrets.yml
+
+# dotenv
+# TODO Comment out this rule if environment variables can be committed
+.env
+
+## Environment normalization:
+/.bundle
+/vendor/bundle
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# Ignore node_modules
+node_modules/
+
+# Ignore precompiled javascript packs
+/public/packs
+/public/packs-test
+/public/assets
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
