@@ -1,0 +1,65 @@
+require: rubocop-rspec
+
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - bin/*
+    - vendor/**/*
+    - db/schema.rb
+    - Gemfile.lock
+    - node_modules/**/*
+
+Layout/CommentIndentation:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: no_space
+
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - "config/environments/production.rb"
+    - "config/initializers/backtrace_silencers.rb"
+    - "config/initializers/content_security_policy.rb"
+    - "config/initializers/devise.rb"
+    - "db/seeds.rb"
+
+Style/Documentation:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/NumericLiterals:
+  Exclude:
+    - "db/seeds.rb"
+    - "db/migrate/*"
+
+Style/RedundantBegin:
+  Exclude:
+    - "bin/yarn"
+
+Style/StderrPuts:
+  Exclude:
+    - "bin/yarn"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
