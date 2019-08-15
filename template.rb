@@ -40,6 +40,13 @@ after_bundle do
     CODE
   end
 
+  Dir["files/**/*.rb"],each do |fname|
+    local_name = fname.gsub(/^files\//, "")
+    copy_file fname, local_name
+  end
+
+  route "root to: \"pages#home\""
+
   if yes? "Add a basic User model? (y/n)"
     generate(:scaffold, "User", "username:string", "first_name:string", "last_name:string")
   end
