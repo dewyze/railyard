@@ -17,9 +17,6 @@ Layout/CommentIndentation:
 Layout/MultilineMethodCallIndentation:
   Enabled: false
 
-Layout/SpaceInsideHashLiteralBraces:
-  Enabled: no_space
-
 Metrics/LineLength:
   Max: 100
   Exclude:
@@ -45,6 +42,12 @@ Metrics/MethodLength:
   Enabled: false
 
 Performance/TimesMap:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
   Enabled: false
 
 Style/Documentation:

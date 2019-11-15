@@ -1,0 +1,2 @@
+- Add rake tasks for clearing database
+- Add mailcatcher?

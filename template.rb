@@ -1,7 +1,7 @@
+gem "pg", "~> 0.18.4"
+
 gem_group :development, :test do
   gem "better_errors"
-  gem "binding_of_caller"
-  gem "pry"
   gem "pry-byebug"
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
@@ -40,14 +40,14 @@ after_bundle do
     CODE
   end
 
-  Dir["files/**/*.rb"],each do |fname|
-    local_name = fname.gsub(/^files\//, "")
-    copy_file fname, local_name
-  end
-
-  route "root to: \"pages#home\""
-
-  if yes? "Add a basic User model? (y/n)"
-    generate(:scaffold, "User", "username:string", "first_name:string", "last_name:string")
-  end
+  # Dir["files/**/*.rb"],each do |fname|
+  #   local_name = fname.gsub(/^files\//, "")
+  #   copy_file fname, local_name
+  # end
+  #
+  # route "root to: \"pages#home\""
+  #
+  # if yes? "Add a basic User model? (y/n)"
+  #   generate(:scaffold, "User", "username:string", "first_name:string", "last_name:string")
+  # end
 end
