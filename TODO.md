@@ -1,2 +1,5 @@
-- Add rake tasks for clearing database
 - Add mailcatcher?
+- Add eslint/prettier/etc
+- Set up rspec by commenting out persistence file
+- Set up devise?
+- Set up invitable?

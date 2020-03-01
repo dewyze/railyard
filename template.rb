@@ -1,5 +1,3 @@
-gem "pg", "~> 0.18.4"
-
 gem_group :development, :test do
   gem "better_errors"
   gem "pry-byebug"
@@ -15,8 +13,8 @@ gem_group :development do
   gem "web-console"
 end
 
-# gem "bcrypt" for secure passwords
-# gem "image_processing" for active storage variants
+gem "bcrypt"
+gem "image_processing"
 
 copy_file "~/dev/railyard/rails.gitignore", ".gitignore"
 copy_file "~/dev/railyard/rubocop.yml", ".rubocop.yml"
@@ -40,14 +38,8 @@ after_bundle do
     CODE
   end
 
-  # Dir["files/**/*.rb"],each do |fname|
-  #   local_name = fname.gsub(/^files\//, "")
-  #   copy_file fname, local_name
-  # end
-  #
-  # route "root to: \"pages#home\""
-  #
-  # if yes? "Add a basic User model? (y/n)"
-  #   generate(:scaffold, "User", "username:string", "first_name:string", "last_name:string")
-  # end
+  Dir["files/**/*"].each do |fname|
+    local_name = fname.gsub(/^files\//, "")
+    copy_file fname, local_name
+  end
 end

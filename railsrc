@@ -1,11 +1,7 @@
---template=~/dev/railyard/template.rb
 --database=postgresql
 --webpack
---skip-action-cable
---skip-action-mailbox
---skip-action-mailer
---skip-action-text
 --skip-turbolinks
 --skip-spring
 --skip-sprockets
 --skip-test
+--template ~/dev/railyard/template.rb
