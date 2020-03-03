@@ -38,8 +38,8 @@ after_bundle do
     CODE
   end
 
-  Dir["files/**/*"].each do |fname|
-    local_name = fname.gsub(/^files\//, "")
+  Dir["~/dev/railyard/files/**/*"].each do |fname|
+    local_name = fname.gsub(/^.*dev\/railyard\/files\//, "")
     copy_file fname, local_name
   end
 end
