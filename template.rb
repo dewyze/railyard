@@ -1,3 +1,7 @@
+def source_paths
+  [__dir__]
+end
+
 gem_group :development, :test do
   gem "better_errors"
   gem "pry-byebug"
@@ -38,8 +42,7 @@ after_bundle do
     CODE
   end
 
-  Dir["~/dev/railyard/files/**/*"].each do |fname|
-    local_name = fname.gsub(/^.*dev\/railyard\/files\//, "")
-    copy_file fname, local_name
-  end
+  directory "files", "."
+
+  # TODO: Run rubocop
 end
