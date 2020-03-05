@@ -4,4 +4,4 @@
 --skip-spring
 --skip-sprockets
 --skip-test
---template ~/dev/railyard/template.rb
+--template=~/dev/railyard/template.rb

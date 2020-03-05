@@ -44,5 +44,8 @@ after_bundle do
 
   directory "files", "."
 
-  # TODO: Run rubocop
+  Bundler.with_unbundled_env do
+    system("bundle binstubs rubocop")
+    system("bin/rubocop -a")
+  end
 end
