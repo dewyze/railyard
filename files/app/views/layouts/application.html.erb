@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Foo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%- if current_user %>
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete %><br />
+    <%- else %>
+      <%= link_to "Log in", new_user_session_path %><br />
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "app/*.rb": { "alternate": "spec/{}_spec.rb" },
+  "app/controllers/*.rb": {
+    "alternate": "spec/requests/{}_spec.rb"
+  },
+  "spec/*_spec.rb": { "alternate": "app/{}.rb" },
+  "spec/requests/*_spec.rb": {
+    "alternate": "app/controllers/{}.rb"
+  }
+}

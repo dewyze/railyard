@@ -8,7 +8,7 @@ AllCops:
   Exclude:
     - bin/*
     - vendor/**/*
-    - db/schema.rb
+    - db/*
     - Gemfile.lock
     - node_modules/**/*
 
@@ -19,13 +19,23 @@ Layout/MultilineMethodCallIndentation:
   Enabled: false
 
 Layout/LineLength:
-  Max: 100
+  Max: 110
   Exclude:
-    - "config/environments/production.rb"
+    - "config/environments/*"
     - "config/initializers/backtrace_silencers.rb"
     - "config/initializers/content_security_policy.rb"
     - "config/initializers/devise.rb"
-    - "db/seeds.rb"
+    - "db/*"
+    - Rakefile
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
 
 Metrics/AbcSize:
   Enabled: false
@@ -42,23 +52,50 @@ Metrics/CyclomaticComplexity:
 Metrics/MethodLength:
   Enabled: false
 
+Metrics/PerceivedComplexity:
+  Exclude:
+    - bin/bundle
+
 Performance/TimesMap:
   Enabled: false
 
 Rails/FilePath:
   EnforcedStyle: arguments
 
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - "app/controllers/application_controller.rb"
+
+Rails/RequestReferer:
+  EnforcedStyle: referrer
+
 RSpec/ExampleLength:
   Enabled: false
 
+RSpec/MessageSpies:
+  EnforcedStyle: receive
+
 RSpec/MultipleExpectations:
   Enabled: false
+
+RSpec/NestedGroups:
+  Max: 4
+
+RSpec/NotToNot:
+  EnforcedStyle: to_not
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - "app/controllers/users/*" # Devise
 
 Style/Documentation:
   Enabled: false
 
 Style/ExpandPathArguments:
   Enabled: false
+
+Style/ExponentialNotation:
+  Enabled: true
 
 Style/FrozenStringLiteralComment:
   Enabled: false
@@ -77,8 +114,7 @@ Style/NegatedIf:
 
 Style/NumericLiterals:
   Exclude:
-    - "db/seeds.rb"
-    - "db/migrate/*"
+    - "db/*"
 
 Style/RedundantBegin:
   Exclude:
