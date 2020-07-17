@@ -1,6 +1,5 @@
 --database=postgresql
 --webpack
---skip-turbolinks
 --skip-spring
 --skip-sprockets
 --skip-test

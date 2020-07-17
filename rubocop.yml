@@ -11,9 +11,17 @@ AllCops:
     - db/*
     - Gemfile.lock
     - node_modules/**/*
+    - package.json
+    - yarn.lock
+
+Capybara/FeatureMethods:
+  Enabled: false
 
 Layout/CommentIndentation:
   Enabled: false
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
 
 Layout/MultilineMethodCallIndentation:
   Enabled: false
@@ -29,6 +37,12 @@ Layout/LineLength:
     - Rakefile
 
 Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/MixedRegexpCaptureTypes:
   Enabled: true
 
 Lint/RaiseException:
@@ -56,6 +70,9 @@ Metrics/PerceivedComplexity:
   Exclude:
     - bin/bundle
 
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
 Performance/TimesMap:
   Enabled: false
 
@@ -69,6 +86,16 @@ Rails/LexicallyScopedActionFilter:
 Rails/RequestReferer:
   EnforcedStyle: referrer
 
+RSpec/ContextWording:
+  Prefixes:
+    - when
+    - with
+    - without
+    - if
+    - unless
+    - for
+    - as
+
 RSpec/ExampleLength:
   Enabled: false
 
@@ -79,7 +106,7 @@ RSpec/MultipleExpectations:
   Enabled: false
 
 RSpec/NestedGroups:
-  Max: 4
+  Max: 5
 
 RSpec/NotToNot:
   EnforcedStyle: to_not
@@ -109,6 +136,9 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: true
 
+Style/ModuleFunction:
+  EnforcedStyle: extend_self
+
 Style/NegatedIf:
   Enabled: false
 
@@ -119,6 +149,18 @@ Style/NumericLiterals:
 Style/RedundantBegin:
   Exclude:
     - "bin/yarn"
+
+Style/RedundantFetchBlock:
+  Enabled: true
+
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+
+Style/RedundantRegexpEscape:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
 
 Style/StderrPuts:
   Exclude:

@@ -18,13 +18,14 @@ gem "image_processing"
 
 gem "devise"
 gem "pundit"
-
+gem "turbolinks_render"
   GEMS
 end
 
 insert_into_file "Gemfile", after: "group :development, :test do\n" do
   <<-GEMS
   gem "better_errors"
+  gem "capybara"
   gem "factory_bot_rails"
   gem "faker"
   gem "pundit-matchers"
@@ -118,6 +119,15 @@ after_bundle do
     CODE
   end
 
+  append_to_file "app/javascript/packs/appliation.js" do
+    <<-CODE
+const images = require.context("../images", true);
+const imagePath = (name) => images(name, true);
+
+import Turbolinks from "turbolinks";
+Turbolinks.start();
+    CODE
+  end
 
   # spec_helper
   gsub_file "spec/spec_helper.rb",

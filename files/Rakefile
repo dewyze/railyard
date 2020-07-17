@@ -12,7 +12,7 @@ RSpec::Core::RakeTask.new(:spec)
 desc "Rubocop changed"
 task rubocop_changed: [:environment] do
   puts "Running rubocop on changed files..."
-  system("rubocop -a $(git diff HEAD --name-only --diff-filter=MA & git ls-files --other --exclude-standard --exclude bin | sort | uniq)")
+  system("bin/rubocop --force-exclusion --only-recognized-file-types -a $(git diff HEAD --name-only --diff-filter=MA & git ls-files --other --exclude-standard --exclude bin | sort | uniq)")
 end
 
 task default: %w[spec rubocop_changed]
