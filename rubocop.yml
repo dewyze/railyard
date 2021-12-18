@@ -13,21 +13,12 @@ AllCops:
     - node_modules/**/*
     - package.json
     - yarn.lock
+  NewCops: enable
 
 Capybara/FeatureMethods:
   Enabled: false
 
-Layout/CommentIndentation:
-  Enabled: false
-
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: true
-
-Layout/MultilineMethodCallIndentation:
-  Enabled: false
-
 Layout/LineLength:
-  Max: 110
   Exclude:
     - "config/environments/*"
     - "config/initializers/backtrace_silencers.rb"
@@ -36,35 +27,19 @@ Layout/LineLength:
     - "db/*"
     - Rakefile
 
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: true
-
-Lint/DeprecatedOpenSSLConstant:
-  Enabled: true
-
-Lint/MixedRegexpCaptureTypes:
-  Enabled: true
-
-Lint/RaiseException:
-  Enabled: true
-
-Lint/StructNewOverride:
-  Enabled: true
-
 Metrics/AbcSize:
-  Enabled: false
-
-Metrics/BlockLength:
-  Enabled: false
+  CountRepeatedAttributes: false
 
 Metrics/ClassLength:
-  Enabled: false
+  Max: 250
+  CountAsOne: ['array', 'heredoc', 'hash']
 
 Metrics/CyclomaticComplexity:
-  Enabled: false
+  Max: 12
 
 Metrics/MethodLength:
-  Enabled: false
+  CountAsOne: ['array', 'heredoc', 'hash']
+  IgnoredMethods: []
 
 Metrics/PerceivedComplexity:
   Exclude:
@@ -118,26 +93,15 @@ Style/ClassAndModuleChildren:
 Style/Documentation:
   Enabled: false
 
-Style/ExpandPathArguments:
-  Enabled: false
-
-Style/ExponentialNotation:
-  Enabled: true
+Style/EndlessMethod:
+  EnforcedStyle: disallow
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/HashEachMethods:
-  Enabled: true
-
-Style/HashTransformKeys:
-  Enabled: true
-
-Style/HashTransformValues:
-  Enabled: true
-
-Style/ModuleFunction:
-  EnforcedStyle: extend_self
+Style/GlobalStdStream:
+  Exclude:
+    - "config/environments/*" # Rails defaults
 
 Style/NegatedIf:
   Enabled: false
@@ -149,18 +113,6 @@ Style/NumericLiterals:
 Style/RedundantBegin:
   Exclude:
     - "bin/yarn"
-
-Style/RedundantFetchBlock:
-  Enabled: true
-
-Style/RedundantRegexpCharacterClass:
-  Enabled: true
-
-Style/RedundantRegexpEscape:
-  Enabled: true
-
-Style/SlicingWithRange:
-  Enabled: true
 
 Style/StderrPuts:
   Exclude:

@@ -88,21 +88,6 @@ after_bundle do
   generate("pundit:install")
 
   # Customize Devise and Pundit
-  insert_into_file "app/controllers/application_controller.rb", after: /class ApplicationController.*\n/ do
-    <<-'CODE'
-  include Pundit
-
-  before_action :authenticate_user!
-  after_action :verify_authorized, except: :index, unless: :devise_controller?
-  after_action :verify_policy_scoped, only: :index, unless: :devise_controller?
-
-  rescue_from Pundit::NotAuthorizedError do |e|
-    message = e.reason ? I18n.t("pundit.errors.#{e.reason}") : e.message
-    flash[:error] = t(message, scope: "pundit", default: :default)
-    redirect_to(request.referrer || root_path)
-  end
-    CODE
-  end
 
   append_to_file "config/locales/en.yml" do
     <<-CODE
@@ -119,7 +104,7 @@ after_bundle do
     CODE
   end
 
-  append_to_file "app/javascript/packs/appliation.js" do
+  append_to_file "app/javascript/packs/application.js" do
     <<-CODE
 const images = require.context("../images", true);
 const imagePath = (name) => images(name, true);
